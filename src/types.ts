@@ -7,3 +7,9 @@ export type Planet = {
   created: string
   url: string
 }
+
+export type ActionState =
+  | { status: 'none' }
+  | { status: 'active' }
+  | { status: 'succeeded' }
+  | { status: 'failed'; error: Error }
