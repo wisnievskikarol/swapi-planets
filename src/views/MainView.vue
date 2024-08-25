@@ -5,7 +5,7 @@ import PlanetList from '@/components/PlanetList.vue'
 import Pagination from '@/components/Pagination.vue'
 import ActionStateHandler from '@/components/ActionStateHandler.vue'
 
-import { usePlanetStore } from '@/stores/usePlanets'
+import { usePlanetStore } from '@/stores/planets'
 import { storeToRefs } from 'pinia'
 import { usePageNavigation } from '@/components/composables'
 
