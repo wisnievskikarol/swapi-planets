@@ -1,1 +1,1 @@
-export * from './usePlanets'
+export * from './planets'
