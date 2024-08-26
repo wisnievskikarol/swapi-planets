@@ -26,8 +26,6 @@
 
   &--retry {
     @include button-style($color-primary);
-    @include hover-style($color-accent-hover);
-    @include focus-style($color-primary);
   }
 
   &--active {
@@ -42,5 +40,6 @@
     @include button-style(green, $color-button-text);
   }
 
+  @include focus-style($color-primary);
   @include hover-style($color-button-hover);
 }
