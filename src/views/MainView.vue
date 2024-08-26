@@ -5,7 +5,7 @@ import PlanetList from '@/components/PlanetList.vue'
 import Pagination from '@/components/Pagination.vue'
 import ActionStateHandler from '@/components/ActionStateHandler.vue'
 
-import { usePlanetStore } from '@/stores/planets'
+import { usePlanetStore } from '@/store/stores/planets'
 import { storeToRefs } from 'pinia'
 import { usePageNavigation } from '@/components/composables'
 
@@ -21,21 +21,30 @@ const { hasNextPage, hasPreviousPage, nextPage, previousPage } = usePageNavigati
 
 const filterText = ref<string>()
 
-const handleFetch = () => {
-  if (filterText.value) {
-    searchPlanets(filterText.value)
-  } else {
-    fetchPlanets()
-  }
-}
+const handleFetch = () => {}
 
 onMounted(() => {
   fetchPlanets()
 })
 
-watch([filterText, currentPage], ([newFilterText, newPage], [oldFilterText, oldPage]) => {
-  if (newFilterText !== oldFilterText || newPage !== oldPage) {
-    handleFetch()
+watch(filterText, (newFilterText, oldFilterText) => {
+  if (newFilterText !== oldFilterText) {
+    if (newFilterText) {
+      searchPlanets(newFilterText)
+    } else {
+      fetchPlanets()
+    }
+  }
+})
+
+watch(currentPage, (newPage, oldPage) => {
+  if (newPage !== oldPage) {
+    changePage(newPage)
+    if (filterText.value) {
+      searchPlanets(filterText.value)
+    } else {
+      fetchPlanets()
+    }
   }
 })
 </script>
