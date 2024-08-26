@@ -52,7 +52,6 @@ watch([filterText, currentPage], fetchAndSearchPlanets)
 
 <style lang="scss" scoped>
 .panel {
-  width: 100%;
   max-width: $breakpoint-desktop;
   margin: auto;
 }
