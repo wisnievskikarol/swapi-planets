@@ -1,17 +1,19 @@
-$font-title: 24px;
-$font-detail: 16px;
+$font-size-title: 24px;
+$font-size-detail: 16px;
 
-$primary-color: #0088ff;
-$secondary-color: #2c3e50;
-$link-color: #e74c3c;
-$link-hover-color: #c0392b;
+$color-primary: #0088ff;
+$color-secondary: #2c3e50;
+$color-accent: #e74c3c;
+$color-accent-hover: #c0392b;
 
-$br-mobile: 375px;
-$br-desktop: 1024px;
+$color-background-primary: #f9f9f9;
+$color-dark: #333333;
 
-$background-primary: #39cccc;
+$color-button-text: white;
+$color-button-hover: #ffef41;
 
-$quite-black: #333333;
+$breakpoint-mobile: 375px;
+$breakpoint-desktop: 1024px;
 
 $button-padding: 8px 16px;
 $button-margin: 0 5px;

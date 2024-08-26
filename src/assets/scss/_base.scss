@@ -45,11 +45,11 @@ b {
 
 a {
   text-decoration: none;
-  color: $primary-color;
+  color: $color-primary;
   font-weight: 600;
   transition: 0.2s;
 
   &:hover {
-    color: $background-primary;
+    color: $color-background-primary;
   }
 }

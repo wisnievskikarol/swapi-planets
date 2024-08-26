@@ -1,6 +1,4 @@
-
-
-@mixin button-style($bg-color, $text-color: $button-text-color, $cursor: pointer) {
+@mixin button-style($bg-color, $text-color: $color-button-text, $cursor: pointer) {
   background-color: $bg-color;
   color: $text-color;
   cursor: $cursor;
@@ -20,28 +18,28 @@
 }
 
 .button {
-  font-size: $font-detail;
+  font-size: $font-size-detail;
   padding: $button-padding;
   margin: $button-margin;
   border-radius: $button-radius;
   cursor: pointer;
 
   &--retry {
-    @include button-style($primary-color);
-    @include hover-style($link-hover-color);
-    @include focus-style($primary-color);
+    @include button-style($color-primary);
+    @include hover-style($color-accent-hover);
+    @include focus-style($color-primary);
   }
 
   &--active {
-    @include button-style(#0056b3, $button-text-color, default);
+    @include button-style(#0056b3, $color-button-text, default);
   }
 
   &--disabled {
-    @include button-style(gray, $button-text-color, not-allowed);
+    @include button-style(gray, $color-button-text, not-allowed);
   }
 
   &--navigation {
-    @include button-style(green, $button-text-color);
+    @include button-style(green, $color-button-text);
   }
 
   @include hover-style($button-hover-background);
