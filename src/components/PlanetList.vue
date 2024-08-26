@@ -15,17 +15,18 @@ defineProps<{
 
 <style lang="scss" scoped>
 .planet-list {
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr;
 }
 
-@media (min-width: 375px) {
+@media (min-width: 800px) {
   .planet-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 50px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
 }
 </style>
