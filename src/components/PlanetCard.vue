@@ -11,7 +11,7 @@ defineProps<{
     <p class="planet-card__title">{{ planet.name }}</p>
     <ul class="planet-card__details">
       <li class="planet-card__detail--item">Population: {{ planet.population }}</li>
-      <li class="planet-card__detail--item">Rotation Period: {{ planet.rotationPeriod }}</li>
+      <li class="planet-card__detail--item">Rotation Period: {{ planet.rotation_period }}</li>
       <li class="planet-card__detail--item">Climate: {{ planet.climate }}</li>
       <li class="planet-card__detail--item">Gravity: {{ planet.gravity }}</li>
       <li class="planet-card__detail--item">

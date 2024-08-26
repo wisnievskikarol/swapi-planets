@@ -1,7 +1,7 @@
 export type Planet = {
   name: string
   population: string
-  rotationPeriod: string
+  rotation_period: string
   climate: string
   gravity: string
   created: string
