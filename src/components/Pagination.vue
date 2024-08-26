@@ -20,6 +20,7 @@ const emit = defineEmits<{
 <template>
   <div class="pagination">
     <button
+      class="pagination__button"
       :class="hasPreviousPage ? 'pagination__button--navigation' : 'pagination__button--disabled'"
       :disabled="!hasPreviousPage"
       @click="emit('previousPage')"
@@ -36,6 +37,7 @@ const emit = defineEmits<{
       {{ page }}
     </button>
     <button
+      class="pagination__button"
       :class="hasNextPage ? 'pagination__button--navigation' : 'pagination__button--disabled'"
       :disabled="!hasNextPage"
       @click="emit('nextPage')"
@@ -48,11 +50,14 @@ const emit = defineEmits<{
 <style lang="scss" scoped>
 .pagination {
   display: flex;
+  margin: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
   flex-direction: column;
   gap: 10px;
 
   &__button {
-    padding: 5px 10px;
+    padding: 10px 20px;
     border: none;
     background: #007bff;
     color: white;
@@ -79,12 +84,12 @@ const emit = defineEmits<{
     }
 
     &:hover:not(&--disabled) {
-      background: #0056b3;
+      background: #ffef41;
     }
   }
 }
 
-@media (min-width: 375px) {
+@media (min-width: $br-mobile) {
   .pagination {
     gap: 10px;
     flex-direction: row;
