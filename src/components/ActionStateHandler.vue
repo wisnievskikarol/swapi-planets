@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ActionState } from '@/stores/utils'
+import type { ActionState } from '@/store/utils'
 import { defineProps, defineEmits } from 'vue'
 
 defineProps<{
