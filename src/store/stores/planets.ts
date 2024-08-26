@@ -1,13 +1,14 @@
 import { defineStore } from 'pinia'
 import type { Planet } from '@/types.js'
-import { searchPlanets, fetchPlanets } from './api.js'
-import { createActionState, type ActionState } from './utils.js'
+import { createActionState, type ActionState } from '../utils.js'
+import { fetchPlanets, searchPlanets } from '../api'
 
 export type PlanetStoreState = {
   planets: Planet[]
   currentPage: number
   totalPages: number
   fetchState: ActionState
+  searchQuery: string
 }
 
 export const usePlanetStore = defineStore('planetStore', {
@@ -15,7 +16,8 @@ export const usePlanetStore = defineStore('planetStore', {
     fetchState: createActionState(),
     planets: [],
     currentPage: 1,
-    totalPages: 1
+    totalPages: 1,
+    searchQuery: ''
   }),
 
   actions: {
@@ -34,10 +36,14 @@ export const usePlanetStore = defineStore('planetStore', {
     async searchPlanets(query: string) {
       this.fetchState = { status: 'active' }
       try {
-        const data = await searchPlanets(query)
+        if (this.searchQuery != query) {
+          this.currentPage = 1
+        }
+        const data = await searchPlanets(query, this.currentPage)
         this.planets = data.results
         this.totalPages = Math.ceil(data.count / 10)
         this.fetchState = { status: 'succeeded' }
+        this.searchQuery = query
       } catch (err) {
         this.fetchState = { status: 'failed', error: err as Error }
       }
@@ -45,7 +51,6 @@ export const usePlanetStore = defineStore('planetStore', {
 
     async changePage(page: number) {
       this.currentPage = page
-      await this.fetchPlanets()
     }
   }
 })
