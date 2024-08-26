@@ -20,7 +20,7 @@ const emit = defineEmits<{
 <template>
   <div class="pagination">
     <button
-      class="button"
+      class="button button--navigation"
       :class="{ 'button--disabled': !hasPreviousPage }"
       :disabled="!hasPreviousPage"
       @click="emit('previousPage')"
@@ -37,7 +37,7 @@ const emit = defineEmits<{
       {{ page }}
     </button>
     <button
-      class="button"
+      class="button button--navigation"
       :class="{ 'button--disabled': !hasNextPage }"
       :disabled="!hasNextPage"
       @click="emit('nextPage')"
@@ -50,6 +50,7 @@ const emit = defineEmits<{
 <style lang="scss" scoped>
 .pagination {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
