@@ -1,9 +1,17 @@
 <script lang="ts" setup>
 import type { Planet } from '@/types'
 
-defineProps<{
+const props = defineProps<{
   planet: Planet
 }>()
+
+const creationDate = () => {
+  const date = new Date(props.planet.created)
+  const day = date.getDate()
+  const month = date.getMonth() + 1
+  const year = date.getFullYear()
+  return `${day}/${month}/${year}`
+}
 </script>
 
 <template>
@@ -14,11 +22,7 @@ defineProps<{
       <li class="planet-card__detail--item">Rotation Period: {{ planet.rotation_period }}</li>
       <li class="planet-card__detail--item">Climate: {{ planet.climate }}</li>
       <li class="planet-card__detail--item">Gravity: {{ planet.gravity }}</li>
-      <li class="planet-card__detail--item">
-        Created: {{ new Date(planet.created).getDate() }}/{{
-          new Date(planet.created).getMonth() + 1
-        }}/{{ new Date(planet.created).getFullYear() }}
-      </li>
+      <li class="planet-card__detail--item">Created: {{ creationDate() }}</li>
       <li class="planet-card__detail--item">
         URL:
         <a :href="planet.url" target="_blank" class="planet-card__link">{{ planet.url }}</a>
