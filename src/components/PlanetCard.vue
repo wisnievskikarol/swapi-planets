@@ -21,7 +21,7 @@ defineProps<{
       </li>
       <li class="planet-card__detail--item">
         URL:
-        <a href="{{ planet.url }}" target="_blank" class="planet-card__link">{{ planet.url }}</a>
+        <a :href="planet.url" target="_blank" class="planet-card__link">{{ planet.url }}</a>
       </li>
     </ul>
   </div>
