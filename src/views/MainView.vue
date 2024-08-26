@@ -1,18 +1,16 @@
 <script lang="ts" setup>
 import { ref, onMounted, watch } from 'vue'
+import { usePlanetStore } from '@/store/stores/planets'
+import { storeToRefs } from 'pinia'
+import { usePageNavigation } from '@/components/composables'
 import SearchBar from '@/components/SearchBar.vue'
 import PlanetList from '@/components/PlanetList.vue'
 import Pagination from '@/components/Pagination.vue'
 import ActionStateHandler from '@/components/ActionStateHandler.vue'
 
-import { usePlanetStore } from '@/store/stores/planets'
-import { storeToRefs } from 'pinia'
-import { usePageNavigation } from '@/components/composables'
-
 const planetStore = usePlanetStore()
 const { planets, currentPage, totalPages, fetchState } = storeToRefs(planetStore)
 const { fetchPlanets, searchPlanets, changePage } = planetStore
-
 const { hasNextPage, hasPreviousPage, nextPage, previousPage } = usePageNavigation(
   totalPages,
   currentPage,
@@ -21,32 +19,17 @@ const { hasNextPage, hasPreviousPage, nextPage, previousPage } = usePageNavigati
 
 const filterText = ref<string>()
 
-const handleFetch = () => {}
-
-onMounted(() => {
-  fetchPlanets()
-})
-
-watch(filterText, (newFilterText, oldFilterText) => {
-  if (newFilterText !== oldFilterText) {
-    if (newFilterText) {
-      searchPlanets(newFilterText)
-    } else {
-      fetchPlanets()
-    }
+const fetchAndSearchPlanets = () => {
+  if (filterText.value) {
+    searchPlanets(filterText.value)
+  } else {
+    fetchPlanets()
   }
-})
+}
 
-watch(currentPage, (newPage, oldPage) => {
-  if (newPage !== oldPage) {
-    changePage(newPage)
-    if (filterText.value) {
-      searchPlanets(filterText.value)
-    } else {
-      fetchPlanets()
-    }
-  }
-})
+onMounted(fetchPlanets)
+
+watch([filterText, currentPage], fetchAndSearchPlanets)
 </script>
 
 <template>
