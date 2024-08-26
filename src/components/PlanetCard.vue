@@ -15,8 +15,8 @@ defineProps<{
       <li class="planet-card__detail--item">Climate: {{ planet.climate }}</li>
       <li class="planet-card__detail--item">Gravity: {{ planet.gravity }}</li>
       <li class="planet-card__detail--item">
-        Created: {{ new Date(planet.created).getDay() }}/{{
-          new Date(planet.created).getMonth()
+        Created: {{ new Date(planet.created).getDate() }}/{{
+          new Date(planet.created).getMonth() + 1
         }}/{{ new Date(planet.created).getFullYear() }}
       </li>
       <li class="planet-card__detail--item">
@@ -32,13 +32,13 @@ defineProps<{
   width: 100%;
   padding: 15px;
   border-radius: 10px;
-  background-color: #f9f9f9;
+  background-color: $color-background-primary;
 
   &__title {
     font-family: 'Orbitron';
-    font-size: $font-title;
+    font-size: $font-size-title;
     font-weight: 600;
-    color: $primary-color;
+    color: $color-primary;
     margin-bottom: 10px;
     text-align: center;
   }
@@ -50,12 +50,12 @@ defineProps<{
     line-height: 30px;
 
     &__detail--item {
-      font-size: $font-detail;
-      color: $secondary-color;
+      font-size: $font-size-detail;
+      color: $color-secondary;
       margin: 5px 0;
       padding: 5px;
       background-color: #ffffff;
-      border-left: 4px solid $primary-color;
+      border-left: 4px solid $color-primary;
       transition: background-color 0.3s ease;
 
       &:hover {
@@ -65,12 +65,12 @@ defineProps<{
   }
 
   &__link {
-    color: $link-color;
+    color: $color-accent;
     text-decoration: none;
     transition: color 0.3s ease;
 
     &:hover {
-      color: $link-hover-color;
+      color: $color-accent-hover;
     }
   }
 }

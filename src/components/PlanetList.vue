@@ -15,18 +15,15 @@ defineProps<{
 
 <style lang="scss" scoped>
 .planet-list {
+  display: grid;
   gap: 20px;
   padding: 10px;
-  display: grid;
   justify-items: center;
   align-items: center;
   grid-template-columns: 1fr;
-}
 
-@media (min-width: 800px) {
-  .planet-list {
+  @media (min-width: $breakpoint-desktop) {
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
   }
 }
 </style>

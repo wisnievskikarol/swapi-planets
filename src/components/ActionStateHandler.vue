@@ -28,26 +28,31 @@ const emit = defineEmits<{
 
 <style lang="scss" scoped>
 .wrapper {
-  border-radius: 8px;
+  border-radius: $button-radius;
+  padding: 8px;
 
-  @media (max-width: $br-mobile) {
-    padding: 8px;
-  }
-
-  @media (min-width: $br-desktop) {
+  @media (min-width: $breakpoint-desktop) {
     padding: 24px;
   }
 }
 
 .text {
-  font-size: $font-detail;
+  font-size: $font-size-detail;
 
   &--loading {
-    color: $quite-black;
+    color: $color-dark;
   }
 
   &--error {
-    color: $link-color;
+    color: $color-accent;
   }
+}
+
+.button--retry {
+  background-color: $button-hover-background;
+  color: $color-button-text;
+  padding: $button-padding;
+  margin: $button-margin;
+  border-radius: $button-radius;
 }
 </style>

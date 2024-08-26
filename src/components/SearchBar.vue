@@ -10,7 +10,7 @@ const modelValue = defineModel<string>()
 
 <style lang="scss" scoped>
 .search {
-  margin: 10px 0 10px 0;
+  margin: 10px 0;
 
   &__input {
     width: 100%;
