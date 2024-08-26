@@ -50,9 +50,9 @@ watch(currentPage, (newPage, oldPage) => {
 </script>
 
 <template>
-  <div class="main-view">
+  <div class="panel">
     <SearchBar v-model="filterText" />
-    <ActionStateHandler :state="fetchState" @retry="handleFetch">
+    <ActionStateHandler :state="fetchState" @retry="fetchAndSearchPlanets">
       <PlanetList :planets="planets" />
       <Pagination
         :currentPage="currentPage"
@@ -68,7 +68,7 @@ watch(currentPage, (newPage, oldPage) => {
 </template>
 
 <style lang="scss" scoped>
-.main-view {
+.panel {
   width: 100%;
   max-width: $br-desktop;
   margin: auto;
