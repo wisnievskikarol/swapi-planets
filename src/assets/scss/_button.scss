@@ -42,5 +42,5 @@
     @include button-style(green, $color-button-text);
   }
 
-  @include hover-style($button-hover-background);
+  @include hover-style($color-button-hover);
 }
