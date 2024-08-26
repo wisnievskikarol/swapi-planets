@@ -4,20 +4,20 @@ import { createActionState, type ActionState } from '../utils.js'
 import { fetchPlanets, searchPlanets } from '../api'
 
 export type PlanetStoreState = {
-  planets: Planet[]
   currentPage: number
-  totalPages: number
   fetchState: ActionState
+  planets: Planet[]
   searchQuery: string
+  totalPages: number
 }
 
 export const usePlanetStore = defineStore('planetStore', {
   state: (): PlanetStoreState => ({
+    currentPage: 1,
     fetchState: createActionState(),
     planets: [],
-    currentPage: 1,
-    totalPages: 1,
-    searchQuery: ''
+    searchQuery: '',
+    totalPages: 1
   }),
 
   actions: {
