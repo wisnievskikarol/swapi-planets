@@ -74,10 +74,4 @@ defineProps<{
     }
   }
 }
-
-@media (min-width: 375px) {
-  .planet-card {
-    width: 350px;
-  }
-}
 </style>
