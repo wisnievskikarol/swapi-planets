@@ -37,16 +37,16 @@ watch([filterText, currentPage], fetchAndSearchPlanets)
     <SearchBar v-model="filterText" />
     <ActionStateHandler :state="fetchState" @retry="fetchAndSearchPlanets">
       <PlanetList :planets="planets" />
-      <Pagination
-        :currentPage="currentPage"
-        :totalPages="totalPages"
-        :hasPreviousPage="hasPreviousPage"
-        :hasNextPage="hasNextPage"
-        @changePage="changePage"
-        @nextPage="nextPage"
-        @previousPage="previousPage"
-      />
     </ActionStateHandler>
+    <Pagination
+      :currentPage="currentPage"
+      :totalPages="totalPages"
+      :hasPreviousPage="hasPreviousPage"
+      :hasNextPage="hasNextPage"
+      @changePage="changePage"
+      @nextPage="nextPage"
+      @previousPage="previousPage"
+    />
   </div>
 </template>
 
