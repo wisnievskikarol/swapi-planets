@@ -1,6 +1,16 @@
 # swapi-planets
 
-This template should help get you started developing with Vue 3 in Vite.
+This template should help get you started developing with Vue 3.
+
+You can view the project live at [swapi-planets.vercel.app](https://swapi-planets.vercel.app/). This project was created as part of a recruiting process and demonstrates the use of various technologies and tools.
+
+## Tech Stack
+
+- **SCSS with BEM**: For styling the application using a modular and maintainable approach.
+- **Storybook**: To develop and test UI components in isolation.
+- **Pinia**: For state management, offering a simple and intuitive API.
+- **Vue 3 Composition API**: To structure and manage component logic efficiently.
+- **SWAPI (Star Wars API)**: Used to fetch data about planets from the Star Wars universe.
 
 ## Recommended IDE Setup
 
