@@ -30,6 +30,10 @@ const emit = defineEmits<{
 .wrapper {
   border-radius: $button-radius;
   padding: 8px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 
   @media (min-width: $breakpoint-desktop) {
     padding: 24px;
@@ -49,7 +53,7 @@ const emit = defineEmits<{
 }
 
 .button--retry {
-  background-color: $button-hover-background;
+  background-color: $color-accent;
   color: $color-button-text;
   padding: $button-padding;
   margin: $button-margin;
