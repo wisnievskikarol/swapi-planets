@@ -1,0 +1,48 @@
+
+
+@mixin button-style($bg-color, $text-color: $button-text-color, $cursor: pointer) {
+  background-color: $bg-color;
+  color: $text-color;
+  cursor: $cursor;
+}
+
+@mixin hover-style($hover-bg-color) {
+  &:hover:not(.button--disabled) {
+    background: $hover-bg-color;
+  }
+}
+
+@mixin focus-style($focus-color) {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $focus-color;
+  }
+}
+
+.button {
+  font-size: $font-detail;
+  padding: $button-padding;
+  margin: $button-margin;
+  border-radius: $button-radius;
+  cursor: pointer;
+
+  &--retry {
+    @include button-style($primary-color);
+    @include hover-style($link-hover-color);
+    @include focus-style($primary-color);
+  }
+
+  &--active {
+    @include button-style(#0056b3, $button-text-color, default);
+  }
+
+  &--disabled {
+    @include button-style(gray, $button-text-color, not-allowed);
+  }
+
+  &--navigation {
+    @include button-style(green, $button-text-color);
+  }
+
+  @include hover-style($button-hover-background);
+}
