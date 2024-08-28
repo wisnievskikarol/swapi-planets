@@ -15,24 +15,24 @@ const creationDate = () => {
 </script>
 
 <template>
-  <div class="planet-card">
-    <p class="planet-card__title">{{ planet.name }}</p>
-    <ul class="planet-card__details">
-      <li class="planet-card__detail--item">Population: {{ planet.population }}</li>
-      <li class="planet-card__detail--item">Rotation Period: {{ planet.rotation_period }}</li>
-      <li class="planet-card__detail--item">Climate: {{ planet.climate }}</li>
-      <li class="planet-card__detail--item">Gravity: {{ planet.gravity }}</li>
-      <li class="planet-card__detail--item">Created: {{ creationDate() }}</li>
-      <li class="planet-card__detail--item">
+  <div class="card">
+    <p class="card__title">{{ planet.name }}</p>
+    <ul class="card__details">
+      <li class="card__detail--item">Population: {{ planet.population }}</li>
+      <li class="card__detail--item">Rotation Period: {{ planet.rotation_period }}</li>
+      <li class="card__detail--item">Climate: {{ planet.climate }}</li>
+      <li class="card__detail--item">Gravity: {{ planet.gravity }}</li>
+      <li class="card__detail--item">Created: {{ creationDate() }}</li>
+      <li class="card__detail--item">
         URL:
-        <a :href="planet.url" target="_blank" class="planet-card__link">{{ planet.url }}</a>
+        <a :href="planet.url" target="_blank" class="card__link">{{ planet.url }}</a>
       </li>
     </ul>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.planet-card {
+.card {
   width: 100%;
   padding: 15px;
   border-radius: 10px;
