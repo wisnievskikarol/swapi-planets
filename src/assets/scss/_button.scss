@@ -36,7 +36,7 @@
     @include button-style(gray, $color-button-text, not-allowed);
   }
 
-  &--navigation {
+  &--green {
     @include button-style(green, $color-button-text);
   }
 

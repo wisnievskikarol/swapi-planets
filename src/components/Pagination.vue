@@ -21,7 +21,7 @@ const emit = defineEmits<{
   <div class="pagination">
     <button
       class="button"
-      :class="!hasPreviousPage ? 'button--disabled' : 'button--navigation'"
+      :class="!hasPreviousPage ? 'button--disabled' : 'button--green'"
       :disabled="!hasPreviousPage"
       @click="emit('previousPage')"
     >
@@ -38,7 +38,7 @@ const emit = defineEmits<{
     </button>
     <button
       class="button"
-      :class="!hasNextPage ? 'button--disabled' : 'button--navigation'"
+      :class="!hasNextPage ? 'button--disabled' : 'button--green'"
       :disabled="!hasNextPage"
       @click="emit('nextPage')"
     >
