@@ -1,4 +1,4 @@
-import type { PlanetApiResponse } from './types'
+import type { PlanetApiResponse } from '@/store/types'
 
 export async function searchPlanets(query: string, page: number) {
   try {

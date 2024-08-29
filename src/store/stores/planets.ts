@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia'
 import type { Planet } from '@/types.js'
-import { createActionState, type ActionState } from '../utils.js'
-import { fetchPlanets, searchPlanets } from '../api'
+import { createActionState } from '@/store/utils.js'
+import { fetchPlanets, searchPlanets } from '@/store/api'
+import type { ActionState } from '@/store/types.js'
 
 export type PlanetStoreState = {
   currentPage: number

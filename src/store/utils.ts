@@ -1,8 +1,4 @@
-export type ActionState =
-  | { status: 'none' }
-  | { status: 'active' }
-  | { status: 'succeeded' }
-  | { status: 'failed'; error: Error }
+import type { ActionState } from './types'
 
 export function createActionState(): ActionState {
   return createIdleActionState()
