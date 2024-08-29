@@ -18,12 +18,12 @@ const creationDate = () => {
   <div class="card">
     <p class="card__title">{{ planet.name }}</p>
     <ul class="card__list">
-      <li class="card__list__item">Population: {{ planet.population }}</li>
-      <li class="card__list__item">Rotation Period: {{ planet.rotation_period }}</li>
-      <li class="card__list__item">Climate: {{ planet.climate }}</li>
-      <li class="card__list__item">Gravity: {{ planet.gravity }}</li>
-      <li class="card__list__item">Created: {{ creationDate() }}</li>
-      <li class="card__list__item">
+      <li class="card__item">Population: {{ planet.population }}</li>
+      <li class="card__item">Rotation Period: {{ planet.rotation_period }}</li>
+      <li class="card__item">Climate: {{ planet.climate }}</li>
+      <li class="card__item">Gravity: {{ planet.gravity }}</li>
+      <li class="card__item">Created: {{ creationDate() }}</li>
+      <li class="card__item">
         URL:
         <a :href="planet.url" target="_blank" class="card__link">{{ planet.url }}</a>
       </li>
@@ -52,19 +52,19 @@ const creationDate = () => {
     padding: 0;
     margin: 0;
     line-height: 30px;
+  }
 
-    &__item {
-      font-size: $font-size-detail;
-      color: $color-secondary;
-      margin: 5px 0;
-      padding: 5px;
-      background-color: #ffffff;
-      border-left: 4px solid $color-primary;
-      transition: background-color 0.3s ease;
+  &__item {
+    font-size: $font-size-detail;
+    color: $color-secondary;
+    margin: 5px 0;
+    padding: 5px;
+    background-color: #ffffff;
+    border-left: 4px solid $color-primary;
+    transition: background-color 0.3s ease;
 
-      &:hover {
-        background-color: #f0f0f0;
-      }
+    &:hover {
+      background-color: #f0f0f0;
     }
   }
 
