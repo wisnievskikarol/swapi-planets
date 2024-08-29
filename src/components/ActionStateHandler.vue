@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ActionState } from '@/store/utils'
+import type { ActionState } from '@/store/types'
 
 defineProps<{
   state: ActionState
