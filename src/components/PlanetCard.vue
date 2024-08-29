@@ -17,13 +17,13 @@ const creationDate = () => {
 <template>
   <div class="card">
     <p class="card__title">{{ planet.name }}</p>
-    <ul class="card__details">
-      <li class="card__detail--item">Population: {{ planet.population }}</li>
-      <li class="card__detail--item">Rotation Period: {{ planet.rotation_period }}</li>
-      <li class="card__detail--item">Climate: {{ planet.climate }}</li>
-      <li class="card__detail--item">Gravity: {{ planet.gravity }}</li>
-      <li class="card__detail--item">Created: {{ creationDate() }}</li>
-      <li class="card__detail--item">
+    <ul class="card__list">
+      <li class="card__list__item">Population: {{ planet.population }}</li>
+      <li class="card__list__item">Rotation Period: {{ planet.rotation_period }}</li>
+      <li class="card__list__item">Climate: {{ planet.climate }}</li>
+      <li class="card__list__item">Gravity: {{ planet.gravity }}</li>
+      <li class="card__list__item">Created: {{ creationDate() }}</li>
+      <li class="card__list__item">
         URL:
         <a :href="planet.url" target="_blank" class="card__link">{{ planet.url }}</a>
       </li>
@@ -47,13 +47,13 @@ const creationDate = () => {
     text-align: center;
   }
 
-  &__details {
+  &__list {
     list-style-type: none;
     padding: 0;
     margin: 0;
     line-height: 30px;
 
-    &__detail--item {
+    &__item {
       font-size: $font-size-detail;
       color: $color-secondary;
       margin: 5px 0;
