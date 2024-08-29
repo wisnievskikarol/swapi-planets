@@ -8,13 +8,13 @@ defineProps<{
 </script>
 
 <template>
-  <div class="planet-list">
+  <div class="list">
     <PlanetCard v-for="planet in planets" :key="planet.url" :planet="planet" />
   </div>
 </template>
 
 <style lang="scss" scoped>
-.planet-list {
+.list {
   display: grid;
   gap: 20px;
   padding: 10px;
